@@ -73,15 +73,6 @@ pipeline{
                }
             }
         }
-
-        stage('JFrog: Artifacts'){
-         when { expression { params.action == 'create' } }
-        steps{
-         script{
-curl -u admin:password -X POST "http://54.166.59.38:8081/artifactory/api/copy/libs-release-local/path/to/artifact_xx_xxx.jar?to=/libs-snapshot-local/path/to/artifact_xx_xxx.jar"
-         }
-        }
-        }
              stage('Docker Image Build'){
                when { expression {  params.action == 'create' } }
             steps{
