@@ -82,7 +82,6 @@ curl -u admin:password -X POST "http://54.166.59.38:8081/artifactory/api/copy/li
          }
         }
         }
-
              stage('Docker Image Build'){
                when { expression {  params.action == 'create' } }
             steps{
